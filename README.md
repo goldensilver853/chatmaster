@@ -1,2 +1,2 @@
-# chatmaster-core
-Core files for the chatmaster app
+# chatmaster
+Core files for the chatmaster
