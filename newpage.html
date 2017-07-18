@@ -1,0 +1,528 @@
+<html>
+    <head>
+      <title>New Page</title>
+        <style>
+          body {
+           overflow: hidden;
+          }
+          
+          a {
+		       font-family: Arial, Helvetica, sans-serif;
+          }
+          
+          details {
+		       font-family: Arial, Helvetica, sans-serif;
+          }
+          
+          #settings {
+          transition: height 1s ease;
+          cursor:pointer;
+          }
+          
+          #settings:not([open]) { 
+            height: 1.25em; 
+          }
+          
+          #settings[open] {
+            height: 11.7em; 
+          }
+          
+          #bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #e1e4ea;
+            width: 100%
+          }
+          
+          #default {
+            transition: background-color 0.7s;
+          }
+          
+          #main {
+            margin: auto;
+            top: 100%;
+            transform: translateY(94%);
+            background-color: #e1e4ea;
+            width: 44.000em;
+            border-radius: 12px;
+            transition: background-color 0.7s, box-shadow 0.5s;
+          }
+          
+          #table1 {
+            border-collapse:separate; 
+            border-spacing:1em;
+          }
+          
+          #tab1 {
+            border-radius: 8px;
+            position: relative;
+            background-color: red;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab2 {
+            border-radius: 8px;
+            position: relative;
+            background-color: green;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s,box-shadow 0.5s;
+          }
+          
+          #tab3 {
+            border-radius: 8px;
+            position: relative;
+            background-color: lightblue;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab4 {
+            border-radius: 8px;
+            position: relative;
+            background-color: yellow;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab5 {
+            border-radius: 8px;
+            position: relative;
+            background-color: black;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab6 {
+            border-radius: 8px;
+            position: relative;
+            background-color: orange;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab7 {
+            border-radius: 8px;
+            position: relative;
+            background-color: purple;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab8 {
+            border-radius: 8px;
+            position: relative;
+            background-color: SaddleBrown;
+            cursor:pointer;
+            text-align: center;
+            width:9.625em;
+            height:8.000em;
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab1:hover {
+            box-shadow: 0 4px 8px 0 rgba(255, 20, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab2:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 220, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab3:hover {
+            box-shadow: 0 4px 8px 0 rgba(73, 255, 252, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab4:hover {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 76, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab5:hover {
+            box-shadow: 0 4px 8px 0 rgba(66, 66, 59, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab6:hover {
+            box-shadow: 0 4px 8px 0 rgba(255, 200, 91, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab7:hover {
+            box-shadow: 0 4px 8px 0 rgba(210, 66, 255, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          #tab8:hover {
+            box-shadow: 0 4px 8px 0 rgba(168, 92, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid white;
+            margin: -1px;
+            transform: scale(1.1);
+            transition: background-color 0.7s, transform 0.7s, border 0.5s, box-shadow 0.5s;
+          }
+          
+          .red {
+            background-color: #aa2e2e !important;
+            transition: background-color 0.7s;
+          }
+          .green {
+            background-color: #3ca348 !important;
+            transition: background-color 0.7s;
+          }
+          
+          .blue {
+            background-color: #3c7fa3 !important;
+            transition: background-color 0.7s;
+          }
+          
+          .yellow {
+            background-color: #c9c632 !important;
+            transition: background-color 0.7s;
+          }
+          
+          .black {
+            background-color: #30302e !important;
+            transition: background-color 0.7s;
+          }
+          
+          .orange {
+            background-color: #bc9214 !important;
+            transition: background-color 0.7s;
+          }
+          .purple {
+            background-color: #a01394 !important;
+            transition: background-color 0.7s;
+          }
+          
+          .brown {
+            background-color: #a3623c !important;
+            transition: background-color 0.7s;
+          }
+          .clearred {
+            background-color: rgba(255, 0, 0, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .cleargreen {
+            background-color: rgba(0, 128, 0, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearblue {
+            background-color: rgba(173, 216, 230, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearyellow {
+            background-color: rgba(255, 255, 0, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearblack {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearorange {
+            background-color: rgba(255, 165, 0, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearpurple {
+            background-color: rgba(128, 0, 128, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          .clearbrown {
+            background-color: rgba(139, 69, 19, 0.5) !important;
+            transition: background-color 0.7s;
+          }
+          
+          
+        </style>
+    </head>
+<body id="default" onload="updateFrames()">
+<div id="main">
+<table align=center id="table1">
+  <tr>
+    <td><a id="a1"><div class="wrap" id="tab1" style="z-index: 1"></div></a></td>
+    <td><a id="a2"><div class="wrap" id="tab2" style="z-index: 1"></div></a></td>
+    <td><a id="a3"><div class="wrap" id="tab3" style="z-index: 1"></div></a></td>
+    <td><a id="a4"><div class="wrap" id="tab4" style="z-index: 1"></div></a></td>
+  </tr>
+  <tr>
+    <td><a id="a5"><div class="wrap" id="tab5" style="z-index: 1"></div></a></td>
+    <td><a id="a6"><div class="wrap" id="tab6" style="z-index: 1"></div></a></td>
+    <td><a id="a7"><div class="wrap" id="tab7" style="z-index: 1"></div></a></td>
+    <td><a id="a8"><div class="wrap" id="tab8" style="z-index: 1"></div></a></td>
+  </tr>
+</table>
+</div>
+<div id="bottom">
+  <details id="settings">
+      <summary>Add your own pages here</summary>
+      <input id="pg1" placeholder="URL"></input><input id="title1" placeholder="Page Title"></input><button id="add1">Add</button><button id="clear1">Clear</button><br>
+      <input id="pg2" placeholder="URL"></input><input id="title2" placeholder="Page Title"></input><button id="add2">Add</button><button id="clear2">Clear</button><br>
+      <input id="pg3" placeholder="URL"></input><input id="title3" placeholder="Page Title"></input><button id="add3">Add</button><button id="clear3">Clear</button><br>
+      <input id="pg4" placeholder="URL"></input><input id="title4" placeholder="Page Title"></input><button id="add4">Add</button><button id="clear4">Clear</button><br>
+      <input id="pg5" placeholder="URL"></input><input id="title5" placeholder="Page Title"></input><button id="add5">Add</button><button id="clear5">Clear</button><br>
+      <input id="pg6" placeholder="URL"></input><input id="title6" placeholder="Page Title"></input><button id="add6">Add</button><button id="clear6">Clear</button><br>
+      <input id="pg7" placeholder="URL"></input><input id="title7" placeholder="Page Title"></input><button id="add7">Add</button><button id="clear7">Clear</button><br>
+      <input id="pg8" placeholder="URL"></input><input id="title8" placeholder="Page Title"></input><button id="add8">Add</button><button id="clear8">Clear</button><br>
+  </details>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+
+        $( "#add1" ).click(function() {
+            window.localStorage.setItem("page1", document.getElementById('pg1').value);
+            window.localStorage.setItem("ti1", document.getElementById('title1').value);
+            updateFrames();
+        });
+        $( "#add2" ).click(function() {
+            window.localStorage.setItem("page2", document.getElementById('pg2').value);
+            window.localStorage.setItem("ti2", document.getElementById('title2').value);
+            updateFrames();
+        });
+        $( "#add3" ).click(function() {
+            window.localStorage.setItem("page3", document.getElementById('pg3').value);
+            window.localStorage.setItem("ti3", document.getElementById('title3').value);
+            updateFrames();
+        });
+        $( "#add4" ).click(function() {
+            window.localStorage.setItem("page4", document.getElementById('pg4').value);
+            window.localStorage.setItem("ti4", document.getElementById('title4').value);
+            updateFrames();
+        });
+        $( "#add5" ).click(function() {
+            window.localStorage.setItem("page5", document.getElementById('pg5').value);
+            window.localStorage.setItem("ti5", document.getElementById('title5').value);
+            updateFrames();
+        });
+        $( "#add6" ).click(function() {
+            window.localStorage.setItem("page6", document.getElementById('pg6').value);
+            window.localStorage.setItem("ti6", document.getElementById('title6').value);
+            updateFrames();
+        });
+        $( "#add7" ).click(function() {
+            window.localStorage.setItem("page7", document.getElementById('pg7').value);
+            window.localStorage.setItem("ti7", document.getElementById('title7').value);
+            updateFrames();
+        });
+        $( "#add8" ).click(function() {
+            window.localStorage.setItem("page8", document.getElementById('pg8').value);
+            window.localStorage.setItem("ti8", document.getElementById('title8').value);
+            updateFrames();
+        });
+        
+        $( "#clear1" ).click(function() {
+            window.localStorage.removeItem("page1");
+            window.localStorage.setItem("ti1", '');
+            updateFrames();
+        });
+        $( "#clear2" ).click(function() {
+            window.localStorage.removeItem("page2");
+            window.localStorage.setItem("ti2", '');
+            updateFrames();
+        });
+        $( "#clear3" ).click(function() {
+            window.localStorage.removeItem("page3");
+            window.localStorage.setItem("ti3", '');
+            updateFrames();
+        });
+        $( "#clear4" ).click(function() {
+            window.localStorage.removeItem("page4");
+            window.localStorage.setItem("ti4", '');
+            updateFrames();
+        });
+        $( "#clear5" ).click(function() {
+            window.localStorage.removeItem("page5");
+            window.localStorage.setItem("ti5", '');
+            updateFrames();
+        });
+        $( "#clear6" ).click(function() {
+            window.localStorage.removeItem("page6");
+            window.localStorage.setItem("ti6", '');
+            updateFrames();
+        });
+        $( "#clear7" ).click(function() {
+            window.localStorage.removeItem("page7");
+            window.localStorage.setItem("ti7", '');
+            updateFrames();
+        });
+        $( "#clear8" ).click(function() {
+            window.localStorage.removeItem("page8");
+            window.localStorage.setItem("ti8", '');
+            updateFrames();
+        });
+        
+        $("#tab1").hover(function () {
+            $("#default").toggleClass("red");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab2").hover(function () {
+            $("#default").toggleClass("green");
+            $("#tab1").toggleClass("clearred");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab3").hover(function () {
+            $("#default").toggleClass("blue");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab1").toggleClass("clearred");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab4").hover(function () {
+            $("#default").toggleClass("yellow");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab1").toggleClass("clearred");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab5").hover(function () {
+            $("#default").toggleClass("black");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab1").toggleClass("clearred");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab6").hover(function () {
+            $("#default").toggleClass("orange");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab1").toggleClass("clearred");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab7").hover(function () {
+            $("#default").toggleClass("purple");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab1").toggleClass("clearred");
+            $("#tab8").toggleClass("clearbrown");
+        });
+        $("#tab8").hover(function () {
+            $("#default").toggleClass("brown");
+            $("#tab2").toggleClass("cleargreen");
+            $("#tab3").toggleClass("clearblue");
+            $("#tab4").toggleClass("clearyellow");
+            $("#tab5").toggleClass("clearblack");
+            $("#tab6").toggleClass("clearorange");
+            $("#tab7").toggleClass("clearpurple");
+            $("#tab1").toggleClass("clearred");
+        });
+    
+        
+
+  function updateFrames() {
+        $("#a1").attr('href', window.localStorage.getItem("page1"));
+        $("#a2").attr('href', window.localStorage.getItem("page2"));
+        $("#a3").attr('href', window.localStorage.getItem("page3"));
+        $("#a4").attr('href', window.localStorage.getItem("page4"));
+        $("#a5").attr('href', window.localStorage.getItem("page5"));
+        $("#a6").attr('href', window.localStorage.getItem("page6"));
+        $("#a7").attr('href', window.localStorage.getItem("page7"));
+        $("#a8").attr('href', window.localStorage.getItem("page8"));
+        
+        
+        document.getElementById('tab1').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page1") + '"></img><br><a href="' + window.localStorage.getItem("page1") + '">' + window.localStorage.getItem("ti1") + '</a>';
+        document.getElementById('tab2').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page2") + '"></img><br><a href="' + window.localStorage.getItem("page2") + '">' + window.localStorage.getItem("ti2") + '</a>';
+        document.getElementById('tab3').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page3") + '"></img><br><a href="' + window.localStorage.getItem("page3") + '">' + window.localStorage.getItem("ti3") + '</a>';
+        document.getElementById('tab4').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page4") + '"></img><br><a href="' + window.localStorage.getItem("page4") + '">' + window.localStorage.getItem("ti4") + '</a>';
+        document.getElementById('tab5').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page5") + '"></img><br><a href="' + window.localStorage.getItem("page5") + '">' + window.localStorage.getItem("ti5") + '</a>';
+        document.getElementById('tab6').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page6") + '"></img><br><a href="' + window.localStorage.getItem("page6") + '">' + window.localStorage.getItem("ti6") + '</a>';
+        document.getElementById('tab7').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page7") + '"></img><br><a href="' + window.localStorage.getItem("page7") + '">' + window.localStorage.getItem("ti7") + '</a>';
+        document.getElementById('tab8').innerHTML = '<img src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + window.localStorage.getItem("page8") + '"></img><br><a href="' + window.localStorage.getItem("page8") + '">' + window.localStorage.getItem("ti8") + '</a>';
+             
+        if (window.localStorage.getItem("ti1") === null) {
+          window.localStorage.setItem("ti1", ''); 
+        }
+        if (window.localStorage.getItem("ti2") === null) {
+          window.localStorage.setItem("ti2", '');
+        }
+        if (window.localStorage.getItem("ti3") === null) {
+          window.localStorage.setItem("ti3", '');
+        }
+        if (window.localStorage.getItem("ti4") === null) {
+          window.localStorage.setItem("ti4", '');
+        }
+        if (window.localStorage.getItem("ti5") === null) {
+          window.localStorage.setItem("ti5", '');
+        }
+        if (window.localStorage.getItem("ti6") === null) {
+          window.localStorage.setItem("ti6", '');
+        }
+        if (window.localStorage.getItem("ti7") === null) {
+          window.localStorage.setItem("ti7", '');
+        }
+        if (window.localStorage.getItem("ti8") === null) {
+          window.localStorage.setItem("ti8", '');
+        }
+  }
+
+</script>
+</body>
+</html>

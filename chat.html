@@ -1,0 +1,744 @@
+<html>
+  <head>
+    <title>Chatmaster</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
+    <style>
+    
+    /* light and dark mode */
+    
+    .style1 {
+      background-color:#222223;
+      color:white;
+      transition: color 0.7s, background-color 0.7s;
+    }
+    
+    .style2 {
+      background-color:#d3d3d3;
+      transition: color 0.7s, background-color 0.7s;
+    }
+  
+  /* username color buttons */
+  
+    #redcol {
+      background-color: #a21515;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #bluecol {
+      background-color: #2716a3;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #greencol {
+      background-color: DarkGreen;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #orangecol {
+      background-color: #d88c00;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #pinkcol {
+      background-color: #dd189c;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #purplecol {
+      background-color: #773687;
+      width: 68px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* change username color buttons on hover */
+    
+    #redcol:hover {
+      background-color: red;
+      box-shadow: 0 4px 8px 0 rgba(255, 20, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #bluecol:hover {
+      background-color: RoyalBlue;
+      box-shadow: 0 4px 8px 0 rgba(65, 105, 225, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #greencol:hover {
+      background-color: SeaGreen;
+      box-shadow: 0 4px 8px 0 rgba(46, 139, 87, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #orangecol:hover {
+      background-color: orange;
+      box-shadow: 0 4px 8px 0 rgba(255, 165, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #pinkcol:hover {
+      background-color: DeepPink;
+      box-shadow: 0 4px 8px 0 rgba(255, 20, 147, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #purplecol:hover {
+      background-color: MediumOrchid;
+      box-shadow: 0 4px 8px 0 rgba(186, 85, 211, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* change username color buttons on disabled */
+    
+    #redcol[disabled=disabled], #redcol:disabled {
+     background-color:#630000;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #bluecol[disabled=disabled], #bluecol:disabled {
+     background-color:#00084c;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #greencol[disabled=disabled], #greencol:disabled {
+     background-color:#00300c;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #orangecol[disabled=disabled], #orangecol:disabled {
+     background-color:#301c00;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #pinkcol[disabled=disabled], #pinkcol:disabled {
+     background-color:#4f0021;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    #purplecol[disabled=disabled], #purplecol:disabled {
+     background-color:#4c004f;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* clear, dark and light mode buttons */
+    
+    .button1 {
+      background-color: #ad2929;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    .button2 {
+      background-color: black;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    .button3 {
+      background-color: #094c07;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* change dark and light mode button on hover */
+    
+    .button1:hover {
+      background-color: red;
+      box-shadow: 0 4px 8px 0 rgba(255, 20, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6); 
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    .button2:hover {
+      background-color: #4a4c4f;
+      box-shadow: 0 4px 8px 0 rgba(66, 66, 59, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    .button3:hover {
+      background-color: green;
+      box-shadow: 0 4px 8px 0 rgba(0, 255, 0, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+      transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* change dark and light mode buttons on disabled */
+    
+    .button2[disabled=disabled], .button2:disabled {
+     background-color:black;
+     color:#0f0f0f;
+     cursor: not-allowed;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* textbox */
+    
+    input {
+     border-radius: 4px;
+     border: none;
+     background-color:#030e23;
+     color: white;
+     padding: 6px 20px;
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* change textboxes on hover */
+    
+    input:hover {
+     background-color: #041c47;
+     box-shadow: 0 4px 8px 0 rgba(14, 58, 140, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    /* changed textbox on disabled */
+    
+    input[disabled=disabled], input:disabled {
+     background-color: #030e23;
+     cursor: not-allowed;
+     color:#0f0f0f;
+     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+     transition: background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    /* add fonts */
+    
+    ul, li, div, details, a, font {
+     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+     font-size: 14px;
+    }
+    
+    /* change links on hover */
+    
+    a:hover {
+      background-color: lightblue;
+      color: white;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px 0 rgba(14, 58, 140, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+      transition: color 0.7s, background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    a {
+     transition: color 0.7s, background-color 0.7s, box-shadow 0.5s; 
+    }
+    
+    /* change cursor of details tag */
+    
+    details {
+     cursor:pointer;
+    }
+    
+    /* change messages on hover */
+    
+    .msg {
+     transition: color 0.7s, background-color 0.7s, box-shadow 0.5s;       
+    }
+    
+    .msg:hover {
+      background-color: GoldenRod;
+      color: white;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px 0 rgba(218, 165, 32, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+      transition: color 0.7s, background-color 0.7s, box-shadow 0.5s;
+    }
+    
+    </style>
+  </head>
+  <body id="horse" class="style2">
+    <ul id="messages"></ul>
+    <hr>
+    <form>
+      <input id="name" placeholder="Username"/> 
+      <br class="spacing1">
+      <br class="spacing1">
+      <input id="m" autocomplete="off" placeholder="Message"/>
+      <br>
+      <br>
+      <button class="button1">Send</button>
+      <div id="alert">Enter your username.</div>
+    </form>
+    <hr>
+    <button id="redcol" disabled>Red</button><br>
+    <button id="bluecol">Blue</button><br>
+    <button id="greencol">Green</button><br>
+    <button id="orangecol">Orange</button><br>
+    <button id="purplecol">Purple</button><br>
+    <button id="pinkcol">Pink</button><br>
+    <button id="dark" class="button2">Dark Mode</button>
+    <button disabled id="light" class="button2">Light Mode</button>
+    <button id="clear"class="button3">Clear</button>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+    
+    // global variables
+    
+    var col = "red";
+    var socket = io();
+    
+    // chat networking and functions
+    
+    $(function () {
+      
+        var socket = io();
+      
+        $('form').submit(function(){
+              var textVal=document.getElementById('name').value;
+              var textVal2=document.getElementById('m').value;
+              var audio1 = new Audio('ding.wav');
+
+              //banned messages
+              
+              if (!textVal.match(/\S/)) {
+                  document.getElementById('alert').innerHTML = '<font color=red>You must have a username!</font><audio src="error.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (!textVal2.match(/\S/)) {
+                  document.getElementById('alert').innerHTML = '<font color=red>You must type a message!</font><audio src="error.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal2.includes('<script>')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal2.length > 300) {
+                  document.getElementById('alert').innerHTML = '<font color=red>You have exceeded the 300 character limit!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal.length > 40) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Your username may not be longer than 40 characters!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal.includes('<script>')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal.includes('<script')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal2.includes('<script')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal2.includes('onchange')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('onchange')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal2.includes('onfocus')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('onfocus')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal.includes('<font')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using custom username colors is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal2.includes('onmouseover')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('onmouseover')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+              
+              if (textVal2.includes('<style>')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Global CSS styling is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('<style>')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Global CSS styling is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal2.includes('document.body.innerHTML')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Modifying the main page body is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('document.body.innerHTML')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Modifying the main page body is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('window.location')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Navigating all users is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }  
+              
+              if (textVal2.includes('window.location')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Navigating all users is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('"{')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }  
+              
+              if (textVal2.includes('"{')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using inline script is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('<img')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>You may not use images in your username!</font><audio src="error.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('<iframe')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>You may not use iframes in your username!</font><audio src="error.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal2.includes('<a')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Links are auto embedded, do not use the a tag.</font><audio src="ding.wav" autoplay />'
+                  return false;
+              } 
+              
+              if (textVal.includes('<a')) {
+                  document.getElementById('alert').innerHTML = '<font color=red>Using links in your username is forbidden!</font><audio src="ding.wav" autoplay />'
+                  return false;
+              }
+
+              
+              //check for certain extentions and modify message
+              
+              if (textVal2.includes('.webm')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view WebM</summary><video muted autoplay src="' + $('#m').val() + '"></video></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }
+              
+              if (textVal2.includes('.png')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }  
+              
+              if (textVal2.includes('.gif')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+              
+              if (textVal2.includes('.jpg')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+              
+              if (textVal2.includes('.jpeg')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+              
+              if (textVal2.includes('.svg')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view vector</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }
+              
+              if (textVal2.includes('.apng')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view animated PNG</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }
+              
+              if (textVal2.includes('.tiff')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary><img src="' + $('#m').val() + '"></img></details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }
+
+              if (textVal2.includes('<img')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view image</summary>' + $('#m').val() + '</details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }  
+              
+              if (textVal2.includes('<iframe')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <details><summary>Click to view frame</summary>' + $('#m').val() + '</details></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+              
+              if (textVal2.includes('http://')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <a href="' + $('#m').val() + '">' + $('#m').val() + '</a></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+              
+              if (textVal2.includes('https://')) {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: <a href="' + $('#m').val() + '">' + $('#m').val() + '</a></span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              } 
+
+              // anything else typed in
+
+              else {
+                  socket.emit('chat message', '<span class="msg"><font color="' + col + '">' + $('#name').val() + '</font>' + ' says: ' + $('#m').val() + '</span>');
+                  $('#m').val(''); + 'says' + $('#m').val('');
+                  document.getElementById('alert').innerHTML = 'Welcome, <font color="' + col + '">' + $('#name').val() + '</font>!';
+                  document.getElementById('name').disabled = true;
+                  return false;
+              }
+        });
+        
+        socket.on('chat message', function(msg) {
+          $('#messages').append($('<li><audio src="ballon.wav" autoplay /><p>').html(msg).fadeIn(750));
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+        });
+        
+        //clear function
+      
+        $( "#clear" ).click(function() {
+        $( "#messages" ).empty();
+          document.getElementById('alert').innerHTML = 'Messages cleared.' + '<audio src="recycle.wav" autoplay />';
+        });
+        
+        //dark and light mode
+    
+        $( "#dark" ).click(function() {
+        document.getElementById('horse').setAttribute('class', 'style1');
+        document.getElementById('alert').innerHTML = 'Dark mode enabled.' + '<audio autoplay src="off.wav" />';
+        document.getElementById('light').disabled=false;
+        document.getElementById('dark').disabled=true;
+        });
+    
+        $( "#light" ).click(function() {
+        document.getElementById('horse').setAttribute('class', 'style2');
+        document.getElementById('alert').innerHTML = 'Light mode enabled.'+ '<audio autoplay src="on.wav" />';
+        document.getElementById('light').disabled=true;
+        document.getElementById('dark').disabled=false;
+        });
+        
+        //username colors
+        
+        $( "#redcol" ).click(function() {
+        col = 'red';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">red.</font>';
+        document.getElementById('redcol').disabled=true;
+        document.getElementById('bluecol').disabled=false;
+        document.getElementById('greencol').disabled=false;
+        document.getElementById('orangecol').disabled=false;
+        document.getElementById('purplecol').disabled=false;
+        document.getElementById('pinkcol').disabled=false;
+        });
+        
+        $( "#bluecol" ).click(function() {
+        col = 'RoyalBlue';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">blue.</font>';
+        document.getElementById('redcol').disabled=false;
+        document.getElementById('bluecol').disabled=true;
+        document.getElementById('greencol').disabled=false;
+        document.getElementById('orangecol').disabled=false;
+        document.getElementById('purplecol').disabled=false;
+        document.getElementById('pinkcol').disabled=false;
+        });
+        
+        $( "#greencol" ).click(function() {
+        col = 'SeaGreen';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">green.</font>';
+        document.getElementById('redcol').disabled=false;
+        document.getElementById('bluecol').disabled=false;
+        document.getElementById('greencol').disabled=true;
+        document.getElementById('orangecol').disabled=false;
+        document.getElementById('purplecol').disabled=false;
+        document.getElementById('pinkcol').disabled=false;
+        });
+        
+        $( "#orangecol" ).click(function() {
+        col = 'orange';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">orange.</font>';
+        document.getElementById('redcol').disabled=false;
+        document.getElementById('bluecol').disabled=false;
+        document.getElementById('greencol').disabled=false;
+        document.getElementById('orangecol').disabled=true;
+        document.getElementById('purplecol').disabled=false;
+        document.getElementById('pinkcol').disabled=false;
+        });
+        
+        $( "#pinkcol" ).click(function() {
+        col = 'DeepPink';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">pink.</font>';
+        document.getElementById('redcol').disabled=false;
+        document.getElementById('bluecol').disabled=false;
+        document.getElementById('greencol').disabled=false;
+        document.getElementById('orangecol').disabled=false;
+        document.getElementById('purplecol').disabled=false;
+        document.getElementById('pinkcol').disabled=true;
+        });
+        
+        $( "#purplecol" ).click(function() {
+        col = 'MediumOrchid';
+        document.getElementById('alert').innerHTML = 'Your username will be <font color="' + col + '">purple.</font>';
+        document.getElementById('redcol').disabled=false;
+        document.getElementById('bluecol').disabled=false;
+        document.getElementById('greencol').disabled=false;
+        document.getElementById('orangecol').disabled=false;
+        document.getElementById('purplecol').disabled=true;
+        document.getElementById('pinkcol').disabled=false;
+        });
+
+    </script>
+  </body>
+</html>
